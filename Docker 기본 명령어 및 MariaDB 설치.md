@@ -1,7 +1,4 @@
-# docker 기본 및 mariaDB 설치
-
-날짜: 2021년 12월 9일
-태그: docker, mariadb, 개발환경 세팅
+# Docker 기본 및 mariaDB 설치
 
 - 1. **Docker Desktop 설치 for Apple silicon**
     
