@@ -1,5 +1,5 @@
 # Today I Learned
 ## TODO 
-- Spring Security & OAuth2.0 Login
+- 코코아 클론 코딩 마무리
 
 
