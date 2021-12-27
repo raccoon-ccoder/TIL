@@ -116,3 +116,26 @@ flex-direction:  row-reverse;
 ![스크린샷 2021-12-27 오후 11 03 23](https://user-images.githubusercontent.com/77538818/147478951-36c8ee02-7d2e-46dc-8c58-4d1e7566b974.png)
 
 이럴때 해당 태그에 modifier `(message-row--own)` 를 사용해 클래스를 추가하여 별도의 css를 추가한다.
+
+***
+
+### CSS 애니메이션 효과 끝난 후 마지막 상태 유지
+- `forwards` 키워드를 사용하면 애니메이션의 마지막 상태를 유지할 수 있다.
+
+``` css
+@keyframes hideSplashScreen {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+}
+
+#splash-screen {
+    animation: hideSplashScreen 0.5s ease-in-out forwards;
+    animation-delay: 1s;
+}
+
+```
+위와 같이 css를 꾸밀 경우 투명도 1-> 0으로 되었다가 애니메이션이 끝나면 다시 투명도가 1로 되지만 _animation_ 속성에 `forwards` 속성값을 사용하면 투명도가 0으로 유지된다.
