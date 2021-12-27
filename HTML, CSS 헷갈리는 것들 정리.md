@@ -139,3 +139,35 @@ flex-direction:  row-reverse;
 
 ```
 위와 같이 css를 꾸밀 경우 투명도 1-> 0으로 되었다가 애니메이션이 끝나면 다시 투명도가 1로 되지만 _animation_ 속성에 `forwards` 속성값을 사용하면 투명도가 0으로 유지된다.
+
+***
+
+### CSS 애니메이션이 매끄럽지 못할 때 사용하는 방법
+- `will-change` 키워드 사용
+	- CSS 애니메이션이 약간 부자연스럽게 (매끄럽지 못하게) 동작하는 경우 해당 키워드 사용
+	- 브라우저에게 어떤 애니메이션이 진행될 것이라고 미리 알려줌으로써 브라우저가 컴퓨터  그래픽카드를 이용해 애니메이션을 가속화
+
+``` css
+@keyframes heartBeat {
+    0% {
+        color: white;
+        transform: none;
+    }
+    50% {
+        color: tomato;
+        transform: scale(1.3);
+    }
+    100% {
+        color: white;
+        transform: none;
+    }
+}
+
+/* open-post__heart-count class 요소에 마우스를 올렸을 때 그 안에 있는 i 태그에게 css 적용 */
+.open-post__heart-count:hover i {
+    will-change: transform;
+    animation: heartBeat 1s linear infinite;
+}
+```
+위와 같은 경우에는 heartBeat 애니메이션이 살짝 떨리면서 작동하였지만 will-change 속성으로 자연스럽게 하트 이모지가 자연스럽게 심장 뛰는 효과를 나타낼 수 있다.
+ 		
