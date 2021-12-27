@@ -21,8 +21,8 @@
 ```
 
 ```css
-p:first-child{  color:green;}
-ol  >  li:last-child{background-color:  blue;}
+p:first-child{ color : green; }
+ol > li:last-child{ background-color : blue; }
 ```
 
 <img width="242" alt="스크린샷 2021-12-27 오후 6 23 05" src="https://user-images.githubusercontent.com/77538818/147456984-2f67ce43-811a-4292-a216-710e341a1d93.png">
