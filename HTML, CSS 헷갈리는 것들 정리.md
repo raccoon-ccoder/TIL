@@ -170,4 +170,31 @@ flex-direction:  row-reverse;
 }
 ```
 위와 같은 경우에는 heartBeat 애니메이션이 살짝 떨리면서 작동하였지만 will-change 속성으로 자연스럽게 하트 이모지가 자연스럽게 심장 뛰는 효과를 나타낼 수 있다.
- 		
+
+***
+
+### Collapsing margins
+- 두개의 box의 border가 같을 경우 (경계가 만나게 될 경우), box들의 margin은 하나로 취급하는 현상 (위나 아래의 border가 만나게 될 경우에만 발생)
+
+``` html
+<body>
+      <div></div>
+</body>
+```
+``` css
+html { background-color: white; }
+
+body {
+	background-color: brown;
+	margin: 10px;
+}
+           
+div {
+	height: 150px;
+	width: 150px;
+	background-color: gray;
+	margin: 80px;
+}
+```
+![스크린샷 2021-12-28 오후 7 41 31](https://user-images.githubusercontent.com/77538818/147558360-fc696725-a89b-4915-bc09-bed3923f6b5d.png)
+body와 div의 border(경계)가 만나기에 두개의 margin은 하나로 합치게 되기에 body의 margin은 10px이지만 div의 margin은 80px이기에 body의 margin도 80px로 적용된다.
