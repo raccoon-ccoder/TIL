@@ -1,4 +1,4 @@
-### :first-child, :last-child  선택자 사용 이유?
+### `:first-child`, `:last-child`  선택자 사용 이유?
 - 의사 클래스 선택자 (가상 클래스 느낌) 중 한 종류로 기존에 존재한 선택자로 구체적인 스타일을 줄 수 없기에 가상 클래스, 가상 요소로 구체적으로 스타일을 나타낼 수 있음
 
 ### `요소:first-child` { 속성: 속성값; } 
@@ -26,6 +26,51 @@ ol > li:last-child{ background-color : blue; }
 ```
 
 <img width="242" alt="스크린샷 2021-12-27 오후 6 23 05" src="https://user-images.githubusercontent.com/77538818/147456984-2f67ce43-811a-4292-a216-710e341a1d93.png">
+
+***
+
+### `nth-child`와 `nth-of-type`의 차이
+|nth-child(n)|nth-of-type(n)  |
+|:---:|:---:|
+|부모 엘리먼트의 `모든 자식` 엘리먼트 중 n번째 태그<br/> 클래스명 사용 `가능` |부모 엘리먼트의 `특정 자식` 엘리먼트 중 n번째 태그 <br/> `태그명`으로 선택, 클래스 사용 `X`|
+
+```html
+<!-- nth-child 예시 -->
+<div>
+  <h1>Heading1</h1>
+  <p>Lorem</p>
+  <p>ipsum</p> 
+  <p>dolor</p>
+</div>
+```
+```css
+p:nth-child(2) {
+  color: white;
+  background-color: gold;
+}
+```
+![스크린샷 2021-12-29 오후 11 23 58](https://user-images.githubusercontent.com/77538818/147671963-9ee656d7-a53b-43fb-bf50-ea5f2d3a67c6.png)
+
+`nth-child`의 경우, p 태그의 부모인 div 태그에서 2번째 요소에 해당하는 `<p>Lorem</p>` 를 지칭하게 된다.
+
+```html
+<!-- nth-of-type -->
+<div>
+  <h1>Heading1</h1>
+  <p>Lorem</p>
+  <p>ipsum</p> 
+  <p>dolor</p>
+</div>
+```
+```css
+p:nth-of-type(2) {
+  color: white;
+  background-color: gold;
+}
+```
+![스크린샷 2021-12-29 오후 11 24 10](https://user-images.githubusercontent.com/77538818/147671981-0cec2dc7-0f5d-4437-a5cb-3a78f6f00d76.png)
+
+`nth-of-type`의 경우, p 태그의 부모인 div 태그에서 자식 요소인 p 태그 중 2번째 요소에 해당하는 `<p>ipsum</p>` 를 지칭하게 된다.
 
 ***
 
