@@ -1,13 +1,21 @@
 ### `block` 특징
 - 옆에 다른 block 요소가 올 수 `없다`
 - 높이, 너비가 있다
-- margin. border, padding을 가지고 있다
+- margin, border, padding을 가지고 있다
+- div, article, form, footer, header, p 등..
 
 ### `inline` 특징
 - 옆에 다른 inline 요소가 올 수 `있다`
 - 높이, 너비가 없다 (box가 아니기 때문)
 - border, padding을 가지며 `좌, 우에 대한 margin`만 존재한다 (높이, 너비가 없기 때문)
 - inline 요소에 위,아래 margin을 주고 싶다면? -> 방법 중 하나로 inline요소들을 block로 변경
+- a, button, img, span, textatea 등..
+
+|  | block | inline-block | inline |
+|:---:|:---:|:---:|:---:|
+|줄바꿈 여부|O|X|X|
+|기본적으로 갖는 너비(width)|100%|글자가 차지하는 만큼|글자가 차지하는 만큼|
+|width, height 사용 가능여부|O|O|X|
 
 *** 
 
