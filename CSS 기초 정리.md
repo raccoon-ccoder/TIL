@@ -56,7 +56,7 @@
       <div></div>
       <div></div>
       <div></div>
-    </body>
+</body>
 ```
 ```css
 body {
@@ -74,6 +74,7 @@ body {
 <head>
    <style>
             body {
+                display: flex;
                 width: 300px;
                 height: 300px;
                 justify-content: space-between;
