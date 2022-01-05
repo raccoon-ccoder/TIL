@@ -114,6 +114,9 @@ div는 body라는 flex container의 자식 요소이지만 동시에 div 안에 
 - 가장 가까운 `relative 부모` 를 기준으로 이동한다
 - 가장 가까운 순서로 relative한 부모 엘리먼트를 찾는데 없을 경우 최종적으로는 **body**가 부모 엘리먼트가 된다
 
+※ `float`, `position: absoulte, fixed` 속성이 있는 요소는 display:flex, inline-flex를 제외하고 `display: block`으로 변경된다   
+→ 따라서 span 태그에 position: fixed 속성이 있을 경우 block 요소로 바뀌며 width, height, 위아래 margin 값을 가질 수 있다   
+
 ***
 
 ### `pseudo selector`
