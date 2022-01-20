@@ -111,4 +111,8 @@ toDos = toDos.filter((toDo) => toDo.id !== Number(li.id));
 - 부연 설명으로는 서버에서 받아온 HTML을 Object 형태로 파싱한 것으로 웹페이지에 대한 `인터페이스`다.(DOM API)
 - DOM에 접근할 수 있는 API인 `document` 객체를 브라우저에서 제공하며, DOM에 접근하는 `entry point`(시작점)이다. (window.document)
 
-
+### 참고자료(Reference)
+- https://developer.mozilla.org/ko/docs/Web/HTML/Global_attributes/id
+- https://developer.mozilla.org/ko/docs/Web/HTML/Element/li
+- https://developer.mozilla.org/ko/docs/Glossary/DOM
+- https://developer.mozilla.org/ko/docs/Web/API/Document
