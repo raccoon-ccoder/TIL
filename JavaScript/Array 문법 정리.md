@@ -1,6 +1,50 @@
 ## Array 문법 정리
 자주 쓰이는 array 관련 메소드를 정리한 글이다.
 
+### Array.prototype.unshift()
+```js
+const array1 = [1, 2, 3];
+
+console.log(array1.unshift(4, 5));  // 5
+
+console.log(array1);  // Array [4, 5, 1, 2, 3]
+```
+- 인수로 전달받은 모든 값을 원본 배열의 `선두`에 요소로 `추가`하며 변경된 length property값을 반환한다.
+
+### Array.prototype.shift()
+```js
+const array1 = [1, 2, 3];
+const firstElement = array1.shift();
+```
+- 원본 배열의 `첫번쨰 요소`를 `제거`하고 제거한 요소를 반환한다.
+- 원본 배열이 빈 배열이면 undefined를 반환한다.
+
+### Array.prototype.concat()
+```js
+const array1 = ['a', 'b', 'c'];
+const array2 = ['d', 'e', 'f'];
+
+console.log(array1.concat(array2)); // Array ["a", "b", "c", "d", "e", "f"]
+```
+- 인수로 전달된 값들을 원본 배열의 `마지막 요소`로 `추가`한 새로운 배열을 반환하며 원본 배열은 변경되지 않는다.
+
+### Array.prototype.splice()
+```js
+splice(start, deleteCount, item1, item2, itemN)
+```
+- 원본 배열의 `중간`에 요소 `추가/제거`시 사용한다.  
+  - `start` - 원본 배열의 요소를 제거하기 시작할 인덱스, start만 지정시 start부터 모든 요소 제거
+  - `deleteCount`(Op) - start부터 제거할 요소의 개수, 0일 경우 제거되지 않음
+  - `item`(Op) - 제거한 위치에 삽입할 요소들의 목록
+```js
+const months = ['Jan', 'March', 'April', 'June'];
+months.splice(1, 0, 'Feb');
+console.log(months);  // Array ["Jan", "Feb", "March", "April", "June"]
+
+months.splice(4, 1, 'May');
+console.log(months); // Array ["Jan", "Feb", "March", "April", "May"]
+```
+
 ### Array.prototype.includes()
 ```js
 arr.includes(valueToFind[, fromIndex])
