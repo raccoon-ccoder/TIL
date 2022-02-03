@@ -4,7 +4,7 @@ JavaScript에서 변수 선언 방식인 `var`, `let` ,`const`의 차이점 정�
 
 ### 1. var
 - `재선언 & 재할당이 가능`하다는 점이 있지만 언어로부터 보호받지 못하기에 실수로 재선언 혹은 재할당을 하여도, 오류가 발생했다는 걸 알려주지 않는다. (const 변수 재할당시 오류 발생)
-- block scope 없음, var hoisiting 등 단점이 존재한다.
+- block scope 없음, var hoisiting 등 단점이 존재한다. (오로지 함수 코드 블록만 지역 스코프로 인정 => `함수 레벨 스코프만` 따름)
 - 이런 유연한 변수 선언으로 간단한 테스트에는 편리할 수 있지만, 코드량이 많아진다면 어디에서 어떻게 사용 될지도 파악하기 힘들기에 ES6 이후, 이를 보완하기 위해 추가된 변수 선언 방식이 `let`과 `const`이다.
 - let, const 를 사용함으로써 `목적`에 따라 `언어를 보호`할 수 있고 변수 선언 방식만 봐도 `코드의 의미`를 빠르게 찾을 수 있다.
 ```js
@@ -14,6 +14,15 @@ console.log(name); // Raccoon
 var name = "Cat";
 console.log(name);  // Cat
 // 재선언을 하였음에도 오류가 발생하지 않는다
+
+// var 키워드 변수는 코드 블록 내에서 선언해도 모두 전역 변수가 된다 (오직 함수 레벨 스코프만 따름)
+var x = 1;
+if(true) {
+  // x는 전연 변수로 이미 선언된 전역 변수 x가 존재하기에 x 변수는 중복 선언됨
+  // 의도치 않게 변수값이 변경되는 부작용 발생!
+  x = 10;
+}
+console.log(x); // 10
 ```
 
 ### 2. const
@@ -37,6 +46,7 @@ console.log(name);
 
 ### 3. let
 - `값이 바뀔 수도 있는 변수`에 대해서 사용하며 `재선언은 불가`하지만, `재할당은 가능`하다.
+- 모든 코드 블록(if문, for문, while문 등..)을 지역 스코프로 인정하는 `블록 레벨 스코프`를 따른다.
 ```js
 let name = "Raccoon";
 console.log(name); // Raccoon
@@ -47,6 +57,14 @@ console.log(name);
 
 name = "Turtle";
 console.log(name);  // Turtle
+
+let foo = 1;  // 전역변수
+{
+  let foo = 2;  // 지역변수
+  let bar = 3;  // 지역변수
+}
+console.log(foo); // 1
+console.log(bar); // ReferenceError : bar is not defined
 ```
 
 ### 호이스팅
