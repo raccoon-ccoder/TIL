@@ -1,4 +1,4 @@
-## [자바스크립트 심화] 실행 컨텍스트 개념
+## [Execution Context] 실행 컨텍스트 & 렉시컬 환경 (record, outer)
 자바스크립트의 필수 개념이라 할 수 있는 실행 컨텍스트에 대해, 어떤 원리인지 공부하면서 정리한 글이다.   
 실행 컨텍스트의 Lexical Enviroment (Record, Outer)에 대해서만 정리해본다.   
 ![스크린샷 2022-02-09 오전 2 39 02](https://user-images.githubusercontent.com/77538818/153044320-0105d823-4980-4ea3-a49d-6bfd4c482002.png)
