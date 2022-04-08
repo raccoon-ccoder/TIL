@@ -103,6 +103,30 @@ const { isLoading: priceLoading, data: price } = useQuery<IPrice>(
 - 코인의 종류가 많아서 query key는 배열로 하였고 isLoading, data는 다른 변수명을 사용하고 싶어서 위와 같이 설정하였다.
 - fetcher 함수가 화살표 함수인 이유는 파라미터에 있는 코인 id를 가져와 함수에 넣어야 하는데 fetchPriceInfo(coinId)라고 사용하면 바로 실행되기에 화살표 함수로 리턴하도록 하였다.
 
+## 개발자 도구로 데이터 확인하기
+- useQuery는 데이터를 캐시로 저장하는데 이를 개발자 도구를 통해 시각적으로 확인할 수 있다.
+```js
+import { ReactQueryDevtools } from 'react-query/devtools'
+
+function App() {
+  return (
+    <>
+      <GlobalStyle />
+      <Router />
+      //개발자 도구 컴포넌트 추가
+      <ReactQueryDevtools initialIsOpen={true} />
+    </>
+  );
+}
+```
+![스크린샷 2022-04-08 오후 9 29 18](https://user-images.githubusercontent.com/77538818/162435945-f82a8c08-e7f9-4557-a6f5-6ec5041463b3.png)   
+- 화면 하단에 개발자 도구 아이콘이 표시된다.
+![스크린샷 2022-04-08 오후 9 29 32](https://user-images.githubusercontent.com/77538818/162435935-62fd0312-e9ee-4624-8b39-0f972d41e9a0.png)
+- 개발자 도구를 열어보면 useQuery를 이용해 받아온 데이터가 캐시로 저장된 것을 확인할 수 있다.
+
+## 참고 자료(Reference)
+[react-query doc](https://react-query.tanstack.com/devtools)
+
 
 
 
