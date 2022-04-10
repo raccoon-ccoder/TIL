@@ -1,4 +1,4 @@
-## [React Hook Form] form 쉽게 사용하기 
+## [React-Hook-Form] form 쉽게 사용하기 
 React Hook Form은 React에서 Form을 쉽게 만들기 위한 라이브러리로 공식문서에 적혀있는 그대로 성능이 좋고 유연하며 유효성 검사에 아주 탁월하다.
 
 ### 1. 설치
@@ -406,6 +406,42 @@ function ToDoList() {
 - `validate: Function | Object`
   - 원하는 규칙으로 유효성 검사를 할 수 있으며 콜백함수 혹은 객체를 넣을 수 있다.
   - `firstname` validate에서는 raccoon이 포함된다면 쓰지 말라는 문자열을 반환하는 `콜백함수`, `lastname`에서는 2가지의 조건을 포함하는 `객체`를 전달한다.
+
+### (5) setValue
+```js
+function ToDoList() {
+    const { 
+        register, 
+        handleSubmit ,
+        setValue  // (*)
+    } = useForm<IForm>();
+
+    const onSubmit = (data:IForm) => {
+        console.log(data.toDo);
+        setValue("toDo", ""); // (*)
+    };
+
+    return (
+        <div>
+            <form onSubmit={handleSubmit(onSubmit)}>
+                <input 
+                    {...register("toDo", {
+                        required: "Write to Do"
+                    })}
+                    placeholder="Write to do" 
+                />
+                <button>Add</button>
+            </form>
+        </div>
+    );
+}
+```
+![ezgif com-gif-maker (3)](https://user-images.githubusercontent.com/77538818/162625105-872079d8-0886-405e-a59b-9adf6563fada.gif)     
+- setValue: (name: string, value: unknown, config?: Object) => void
+  - 필드 값을 업데이트하는 함수
+  - 등록된 필드의 값을 동적으로 설정하고 form state를 확인하며 업데이트하는 옵션을 가진다. 동시에 불필요한 리렌더링을 피한다.
+  - 위 코드에서 toDo 입력 후 form 데이터 유효성 검사가 정상적으로 완료되면 입력란이 공백으로 되는 것을 볼 수 있다. 
+
 
 ## 참고 자료(Reference)
 [react hook form doc](https://react-hook-form.com/)     
