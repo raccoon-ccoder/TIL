@@ -69,6 +69,15 @@ declare module "react" {
 }
 ```
 
+위 방법도 해결이 되지 않는다면 임시방편으로 node_modules\react-query\types\react\QueryClientProvider.d.ts 파일을 다음과 같이 수정한다.
+```js
+React.FC<QueryClientProviderProps>;
+
+to 
+
+React.FC<React.PropsWithChildren<QueryClientProviderProps>>;
+```
+
 ### 참고 자료
 [QueryClientProvider type issue after upgrading to React 18](https://github.com/tannerlinsley/react-query/issues/3476)
 
