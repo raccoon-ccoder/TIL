@@ -1,5 +1,6 @@
 ## [react-beautiful-dnd] 리스트 드래그 앤 드랍
-라이브러리로 쉽게 구현하는 드래그 앤 드랍 기능으로 코드는 타입스크립트 기준이다.
+라이브러리로 쉽게 구현하는 드래그 앤 드랍 기능으로 코드는 타입스크립트 기준이다.    
+관련 토이 프로젝트 결과물은 [여기](https://raccoon-ccoder.github.io/react-todo/)를 참고하면 된다.
 
 ### 라이브러리 다운로드
 ```js
@@ -160,7 +161,8 @@ function App() {
 
 
 ## 참고 자료(Reference)
-[beautiful-dnd doc 한글화](https://github.com/LeeHyungGeun/react-beautiful-dnd-kr)
+[beautiful-dnd doc 한글화](https://github.com/LeeHyungGeun/react-beautiful-dnd-kr)      
+
 
 
 
