@@ -145,7 +145,7 @@ $ git clone git@github.com-회사명:companyRepo/sample.git
 ```
 위와 같이 하면 정상적으로 다운로드된다.
 
-### 5. 설정이 제대로 되었는지 확인하는 방법
+### 6. 설정이 제대로 되었는지 확인하는 방법
 ```js
 $ ssh -T git@github.com-[3번에서 github.com-(지정값) 여기서 지정한 지정값]
 
@@ -164,6 +164,18 @@ Warning: Permanently added 'github.com' (RSA) to the list of known hosts.
 Hi SOMJANG! You've successfully authenticated, but GitHub does not provide shell access.
 ```
 
+<br />
+
+### 7. 콘솔에서 계정 변경
+```js
+git config user.name 계정아이디
+git config user.email 이메일
+
+// 확인
+git config user.name
+git config user.email
+```
+변경 후 커밋하면 깃허브에 변경된 계정으로 커밋되는 것을 확인할 수 있다.
 
 
 
