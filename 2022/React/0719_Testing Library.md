@@ -76,10 +76,43 @@ module.exports = override(
   
 **(1) hoc로 컴포넌트를 queryClientProvider로 감싸서 해결**
 ```js
-
-```
+  const LineChart = () => {
+... 중략
+}
+export function LineWrapper() {
+  return (
+    <QueryClientProvider client={queryClient}>
+        <LineChart times={10} />
+    </QueryClientProvider>
+  );
+}
   
+// LineChart.test.tsx
+describe('<LineChart />', () => {
+  it('renders title', () => {
+    const {getByText} = render(
+      <LineWrapper />
+    )
+    const loader = getByText('Loading...')
+    expect(loader).toBeInTheDocument()
+  })
+})
+```
+
+
 **(2) 테스트 파일에서 직접 queryClientProvider 사용**
 ```js
+const queryClient = new QueryClient()
+const times = 10
+describe('<LineChart />', () => {
+  it('renders title', () => {
+    const {getByText} = render(
+      <QueryClientProvider client={queryClient}>
+        <LineChart times={10} />
+      </QueryClientProvider>
+    )
+    const loader = getByText('Loading...')
+    expect(loader).toBeInTheDocument()
+  })
+})
 
-```
